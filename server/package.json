@@ -1,0 +1,34 @@
+{
+  "name": "doc-webapp",
+  "version": "1.0.0",
+  "description": "WebApp for reading pdf/doc files",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paatrycjaa/doc-webapp.git"
+  },
+  "keywords": [
+    "nodejs",
+    "rest",
+    "api",
+    "mysql",
+    "sequelize"
+  ],
+  "author": "paatrycjaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paatrycjaa/doc-webapp/issues"
+  },
+  "homepage": "https://github.com/paatrycjaa/doc-webapp#readme"
+}
