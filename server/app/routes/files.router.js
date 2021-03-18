@@ -3,14 +3,12 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-    // Create a new Tutorial
+    // Create a new URL
     router.post("/", files.create);
   
-    // Retrieve all Tutorials
+    // Retrieve all Files
     router.get("/", files.findAll);
-  
-    // Retrieve a single Tutorial with id
-    router.get("/:id", files.findOne);
+
   
     return router;
   };

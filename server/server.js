@@ -20,9 +20,22 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//requiring path and fs modules
+const path = require('path');
+const fs = require('fs');
+var dirPath = path.join(__dirname, '/pd');
+var filesList;
+
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Aplikacja do przeglądania plików doc/pdf." });
+  fs.readdir(dirPath, function(err, files){
+    filesList = files.filter(function(e){
+      return path.extname(e).toLowerCase() === '.pdf'
+    });
+    console.log(filesList[0]);
+  });
+  //res.json({ message: "Aplikacja do wylistowania plików doc/pdf." });
+  res.send(JSON.stringify(filesList));
 
 });
 

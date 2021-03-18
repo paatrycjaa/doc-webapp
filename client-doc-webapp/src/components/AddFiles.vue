@@ -2,34 +2,23 @@
   <div class="submit-form">
     <div v-if="!submitted">
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">Type URL</label>
         <input
           type="text"
           class="form-control"
           id="title"
           required
-          v-model="file.title"
+          v-model="file.url"
           name="title"
         />
       </div>
 
-      <div class="form-group">
-        <label for="description">Description</label>
-        <input
-          class="form-control"
-          id="description"
-          required
-          v-model="file.description"
-          name="description"
-        />
-      </div>
-
-      <button @click="saveTutorial" class="btn btn-success">Submit</button>
+      <button @click="saveURL" class="btn btn-success">Submit</button>
     </div>
 
     <div v-else>
       <h4>You submitted successfully!</h4>
-      <button class="btn btn-success" @click="newTutorial">Add</button>
+      <button class="btn btn-success" @click="newURL">Add</button>
     </div>
   </div>
 </template>
@@ -42,24 +31,20 @@ export default {
   data() {
     return {
       file: {
-        id: null,
-        title: "",
-        description: "",
-        published: false
+        url: "",
       },
       submitted: false
     };
   },
   methods: {
-    saveTutorial() {
+    saveURL() {
       var data = {
-        title: this.file.title,
-        description: this.file.description
+        url: this.file.url,
       };
 
       DataService.create(data)
         .then(response => {
-          this.file.id = response.data.id;
+          this.file.url = response.data.url;
           console.log(response.data);
           this.submitted = true;
         })
@@ -68,7 +53,7 @@ export default {
         });
     },
     
-    newTutorial() {
+    newURL() {
       this.submitted = false;
       this.file = {};
     }
