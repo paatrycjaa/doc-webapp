@@ -1,10 +1,14 @@
+/**
+ * Server controller
+ */
+
 const db = require("../models");
 const Files = db.dbdoc;
 const Op = db.Sequelize.Op;
 
 const path = require('path');
 const fs = require('fs');
-// Save new URL
+// Save new path
 
 var dirPath = path.format({
     root: '/ignored',
@@ -20,22 +24,20 @@ exports.create = (req, res) => {
         return;
     }
 
-    try {
-        if (fs.existsSync(req.body.url)) {
-            //var filesList = fs.readdirSync(req.body.url);
-            dirPath = req.body.url;
-            res.send(JSON.stringify(dirPath))
-        }
-      } catch(err) {
+    console.log(fs.existsSync(req.body.url))
+    if(!fs.existsSync(req.body.url)){
         res.status(500).send({
             message: "This path doesn't exist!"
-        })
-        console.error(err)
+        });
         return;
-    }
+    };
+
+
+    dirPath = req.body.url;
+    res.send(JSON.stringify(dirPath))
 };
 
-// Retrieve all Files from the URL
+// Retrieve all Files from the path
 exports.findAll = (req, res) => {
     var filesList = fs.readdirSync(dirPath);
   

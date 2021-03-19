@@ -12,10 +12,5 @@ export default new Router({
       name: "files",
       component: () => import("./components/FindFiles")
     },
-    {
-      path: "/add",
-      name: "add",
-      component: () => import("./components/AddFiles")
-    }
   ]
 });

@@ -3,7 +3,7 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-    // Create a new URL
+    // Create a new path
     router.post("/", files.create);
   
     // Retrieve all Files

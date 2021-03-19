@@ -1,3 +1,5 @@
+// HTTP Requests
+
 import http from "../http-common";
 
 class DataService {
@@ -10,9 +12,6 @@ class DataService {
     return http.get("/files");
   }
 
-  get(id) {
-    return http.get(`/files/${id}`);
-  }
 }
 
 export default new DataService();
