@@ -7,17 +7,17 @@ Vue.js + Node.js + Express
 ### Server - Node.js
 Setup:
 
-`
+```
 cd server
 npm install express sequelize mysql2 body-parser cors --save
-`
+```
 
 Run:
 
-`
+```
 cd server
 node server.js
-`
+```
 
 App running at port 8080
 
@@ -29,16 +29,17 @@ Technology:
     
 Setup:
 
-`
+```
 cd client-doc-webapp
 npm install
-`
+```
+
 Run:
 
-`
+```
 cd client-doc-webapp
 npm run serve
-`
+```
 
 App runing at port 8081
 
