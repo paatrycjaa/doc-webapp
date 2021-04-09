@@ -8,7 +8,6 @@ Vue.js + Node.js + Express
 Setup:
 
 `
-
 cd server
 npm install express sequelize mysql2 body-parser cors --save
 
@@ -17,7 +16,6 @@ npm install express sequelize mysql2 body-parser cors --save
 Run:
 
 `
-
 cd server
 node server.js
 
@@ -34,7 +32,6 @@ Technology:
 Setup:
 
 `
-
 cd client-doc-webapp
 npm install
 
@@ -42,7 +39,6 @@ npm install
 Run:
 
 `
-
 cd client-doc-webapp
 npm run serve
 
