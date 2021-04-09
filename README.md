@@ -6,12 +6,14 @@ Vue.js + Node.js + Express
 
 ### Server - Node.js
 Setup:
+
 `
 cd server
 npm install express sequelize mysql2 body-parser cors --save
 `
 
 Run:
+
 `
 cd server
 node server.js
@@ -26,11 +28,14 @@ Technology:
     axios: 0.19.0
     
 Setup:
+
 `
 cd client-doc-webapp
 npm install
+
 `
 Run:
+
 `
 cd client-doc-webapp
 npm run serve
